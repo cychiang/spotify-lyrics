@@ -1,5 +1,6 @@
 import subprocess
-
+import musixmatch
+import getKey
 def getCurrentTrack():
     currentTrack = subprocess.Popen(['osascript', 'getCurrentTrack.scpt'], 
     stdin=subprocess.PIPE, stdout=subprocess.PIPE)
@@ -16,3 +17,10 @@ currentInfo = {
 }
 
 print(currentInfo)
+musixmatch_key = getKey.musixmatch()[:-1]
+
+# try:
+#     musixmatch
+#     chart = musixmatch.ws.track.chart.get(country='it', apikey=apikey)
+# except musixmatch.api.Error, e:
+#     pass
